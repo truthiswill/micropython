@@ -144,7 +144,7 @@ CFLAGS += -Os -DNDEBUG
 endif
 
 LDFLAGS =  -T flash.ld -Wl,-Map=$@.map -Wl,--cref -msoft-float -mfloat-abi=soft
-LIBS =  libsam_sam3x8e_gcc_rel.a    -lm libm.a    $(BUILD)/firm.a $(BUILD)/py.a 
+LIBS =     -lm libm.a    $(BUILD)/firm.a $(BUILD)/py.a 
 
 SRC_C = \
 	lib/utils/pyexec.c \
