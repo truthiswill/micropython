@@ -163,6 +163,28 @@ void pin_init0(void) {
         g_pinMode[i]  = -1;
 }
 
+
+
+STATIC mp_obj_t pin_high(mp_obj_t self_in) {
+    pyb_pin_obj *self = self_in;
+
+    set_pin(self->board_pin, HIGH);
+    return mp_const_none;
+}
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(pyb_pin_high, pin_high);
+
+
+
+STATIC mp_obj_t pin_low(mp_obj_t self_in) {
+    pyb_pin_obj *self = self_in;
+
+    set_pin(self->board_pin, LOW);
+    return mp_const_none;
+}
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(pyb_pin_low, pin_low);
+
+
+
 STATIC mp_obj_t pyb_init_helper(const pyb_pin_obj *self_in, mp_uint_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args);
 
 
@@ -258,6 +280,8 @@ STATIC const mp_map_elem_t pin_locals_dict_table[] = {
     {MP_OBJ_NEW_QSTR(MP_QSTR_board),    (mp_obj_t)&pin_board_pins_obj_type},
     {MP_OBJ_NEW_QSTR(MP_QSTR_mode),     (mp_obj_t)&pyb_pin_mode},
     {MP_OBJ_NEW_QSTR(MP_QSTR_init),     (mp_obj_t)&pin_init_obj},
+    {MP_OBJ_NEW_QSTR(MP_QSTR_high),     (mp_obj_t)&pyb_pin_high},
+    {MP_OBJ_NEW_QSTR(MP_QSTR_low),     (mp_obj_t)&pyb_pin_low},
 
 };
 
