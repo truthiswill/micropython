@@ -150,7 +150,6 @@ SRC_C = \
 	lib/utils/pyexec.c \
 	lib/libc/string0.c \
 	lib/mp-readline/readline.c \
-	lib/utils/pyhelp.c \
 	main.c 			\
 	due_mphal.c 	\
 	led.c 	     	\

@@ -1,8 +1,7 @@
-#include <stdio.h>
 
-#include "lib/utils/pyhelp.h"
+#include "py/builtin.h"
 
-STATIC const  char *help_text = 
+const  char *help_text = 
 "Welcome to Micropython!\n"
 "\n"
 "Quick overview of commands supported fot the board:\n"
@@ -42,27 +41,3 @@ STATIC const  char *help_text =
 "  CTRL-E        -- on a blank line, enter paste mode\n"
 "\n"
 ;
-
-
-STATIC mp_obj_t machine_help(uint n_args, const mp_obj_t *args) {
-
-	if(n_args == 0) {
-		printf("%s\n",help_text);
-	}
-	return mp_const_none;
-}
-MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(mp_builtin_help_obj, 0, 1, machine_help);
-
-
-
-
-
-
-
-
-
-
-
-
-
-

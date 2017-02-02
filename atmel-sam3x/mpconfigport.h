@@ -23,6 +23,8 @@
 #define MICROPY_ERROR_REPORTING     (MICROPY_ERROR_REPORTING_TERSE)
 #define MICROPY_BUILTIN_METHOD_CHECK_SELF_ARG (0)
 #define MICROPY_PY_ASYNC_AWAIT (0)
+#define MICROPY_PY_BUILTINS_HELP    (1)
+#define MICROPY_PY_BUILTINS_HELP_TEXT help_text
 #define MICROPY_PY_BUILTINS_BYTEARRAY (1)
 #define MICROPY_PY_BUILTINS_MEMORYVIEW (0)
 #define MICROPY_PY_BUILTINS_ENUMERATE (0)
@@ -78,7 +80,6 @@ extern const struct _mp_obj_module_t pyb_module;
 
 
 #define MICROPY_PORT_BUILTINS \
-    {MP_OBJ_NEW_QSTR(MP_QSTR_help), (mp_obj_t)&mp_builtin_help_obj}, \
     { MP_OBJ_NEW_QSTR(MP_QSTR_open), (mp_obj_t)&mp_builtin_open_obj }, \
 
 #define MP_STATE_PORT MP_STATE_VM
