@@ -3,6 +3,13 @@ Arduino Due
 Arduino Due is based on Atmel SAM3X8E Cortex M3 CPU. It has 96KB of SRAM and 512KB of flash memory of code.
 
 
+## What works?
+ * Pin 
+ * ADC
+ * DAC
+ * PWM
+ * I2C
+ * LED
 
 ## Building
 
